@@ -1,5 +1,7 @@
 create schema room;
 
+create extension if not exists btree_gist;
+
 create table room.room (
     room_id serial primary key,
     name varchar not null unique,
