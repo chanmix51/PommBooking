@@ -7,7 +7,7 @@ $loader->add(null, __DIR__);
 
 return new Pomm(['booking' =>
     [
-        'dsn' => 'pgsql://postgres:coldshadow@127.0.0.1:5432/booking',
+        'dsn' => 'pgsql://user:pass@host:port/db_name',
         'class:session_builder' => '\PommProject\ModelManager\SessionBuilder',
     ]
 ]);

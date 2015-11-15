@@ -137,7 +137,7 @@ $pomm = require __DIR__.'/../.pomm_cli_bootstrap.php';
 
 $rooms = $pomm['booking']
     ->getModel('\Model\Booking\RoomSchema\RoomModel')
-    ->findAll()
+    ->findAll();
 ?>
 <html>
     <head></head>
@@ -150,7 +150,6 @@ $rooms = $pomm['booking']
         <?php }else{  ?>
             <ul>
                 <?php
-                // 3. On parcours les résultats
                 foreach ($rooms as $room): ?>
                     <li><?php echo $room->getName(); ?></li>
                 <?php endforeach; ?>

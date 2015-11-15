@@ -17,7 +17,6 @@ $rooms = $pomm['booking']
         <?php }else{  ?>
             <ul>
                 <?php
-                // 3. On parcours les résultats
                 foreach ($rooms as $room): ?>
                     <li><?php echo $room->getName(); ?></li>
                 <?php endforeach; ?>
