@@ -1,16 +1,10 @@
 <?php //index.php
 
-require_once __DIR__.'/../vendor/autoload.php';
+$pomm = require __DIR__.'/../.pomm_cli_bootstrap.php';
 
-use \PommProject\Foundation\Pomm;
-
-// 1. Initialisation de pomm
-$pomm = new Pomm(['booking' => ['dsn' => 'pgsql://user:pass@host:port/db_name']]);
-
-// 2. Exécution de la requête permettant de récupérer les salles
-$result = $pomm['booking']
-    ->getQueryManager()
-    ->query('select * from room.room');
+$rooms = $pomm['booking']
+    ->getModel('\Model\Booking\RoomSchema\RoomModel')
+    ->findAll()
 ?>
 <html>
     <head></head>
@@ -18,14 +12,14 @@ $result = $pomm['booking']
         <h1>Pomm - Booking</h1>
 
         <p>Liste des chambres : </p>
-        <?php if ($result->isEmpty()) { ?>
+        <?php if ($rooms->isEmpty()) { ?>
             <p>Aucune chambre</p>
         <?php }else{  ?>
             <ul>
                 <?php
                 // 3. On parcours les résultats
-                foreach ($result as $room): ?>
-                    <li><?php echo $room['name']; ?></li>
+                foreach ($rooms as $room): ?>
+                    <li><?php echo $room->getName(); ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php } ?>
