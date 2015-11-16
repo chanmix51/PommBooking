@@ -11,9 +11,9 @@ $rooms = $pomm['booking']
     <body>
         <h1>Pomm - Booking</h1>
 
-        <p>Liste des chambres : </p>
+        <p>Liste des salles : </p>
         <?php if ($rooms->isEmpty()) { ?>
-            <p>Aucune chambre</p>
+            <p>Aucune salle</p>
         <?php }else{  ?>
             <ul>
                 <?php

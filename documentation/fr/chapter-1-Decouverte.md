@@ -41,9 +41,9 @@ $result = $pomm['booking']
     <body>
         <h1>Pomm - Booking</h1>
 
-        <p>Liste des chambres : </p>
+        <p>Liste des sallles : </p>
         <?php if ($result->isEmpty()) { ?>
-            <p>Aucune chambre</p>
+            <p>Aucune salle</p>
         <?php }else{  ?>
             <ul>
                 <?php
@@ -144,9 +144,9 @@ $rooms = $pomm['booking']
     <body>
         <h1>Pomm - Booking</h1>
 
-        <p>Liste des chambres : </p>
+        <p>Liste des salles : </p>
         <?php if ($rooms->isEmpty()) { ?>
-            <p>Aucune chambre</p>
+            <p>Aucune salle</p>
         <?php }else{  ?>
             <ul>
                 <?php
@@ -174,8 +174,8 @@ La fonction getModel() nous permet de récupérer le model dont nous avons besoi
 Les objets Model possèdent des fonctions fournit par les traits ReadQueries et WriteQueries, findAll() fait parti de celle-ci.
 
 La totalité des fonctions sont décritent dans la [documentation de ModelManager](https://github.com/pomm-project/ModelManager/blob/master/documentation/model_manager.rst)
- 
-La fonction findAll() renvoit un iterator composé de FlexibleEntity rattaché au model utilisé, dans notre cas RoomModel.
 
+La fonction ```findAll()``` renvoit un iterator composé de FlexibleEntity rattaché au model utilisé, dans notre cas RoomModel.
 
+L'objet flexible grâce a la méthode magique ```__call``` nous met a disposition les accesseurs pour récupérer ou modifier les valeurs de celui-ci.
 
